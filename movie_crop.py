@@ -49,10 +49,10 @@ movie_path = Path(r'./big_bunny.mp4')
 output_path = Path(r'./saved')
 save_filename = 'test' # filename will be save_filename + save_filetype (or stem + ### + filetype)
 save_filetype = 'avi'  # avi and mp4 are good.png means use image stack.
-codec = 'FFV1'     #'FFV1' is lossless. 'DIVX' is super efficient. Ignored for png
-frame_to_crop = 100
+codec = 'DIVX'     #'FFV1' is lossless. 'DIVX' is super efficient. Ignored for png
+frame_to_crop = 500
 num_to_preview = 300  #set to 0 if you don't want preview
-num_to_save = 550
+num_to_save = 200
 save_fps = 15
 line_width = 4            # line for rectangle you are drawing
 line_color = (0, 0, 255)  #remember cv2 is bgr -- this is red
@@ -206,12 +206,6 @@ if k == 27:
     cv2.destroyAllWindows()
 print("Done setting crop parameters")
 
-"""
-movie_path = Path(r'./test.mp4')
-output_path = Path(r'./saved')
-save_filename = 'test' # filename will be save_filename + save_filetype (or stem + ### + filetype)
-save_filetype = 'avi'  # avi and mp4 are good.png means use image stack.
-"""
 
 #%% SAVE CROPPED DATA WITH NEW PARAMETERS
 # Save num_to_save frames to image stack if png specified, 
