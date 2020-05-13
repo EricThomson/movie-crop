@@ -1,5 +1,5 @@
 # movie-crop
-A module for cropping movies using Python.
+Crop movies using Python.
 
 ![](example.png)
 
