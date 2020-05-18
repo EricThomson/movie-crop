@@ -1,29 +1,31 @@
 # Supplementary information with movie-crop
 Stuff that didn't belong in the main readme.md but that I couldn't bear throwing away.
 
-## Results of experimenting with differnet codecs and file types
-codec      format   works?  size (MB)  codec decoded as
-MJPG:
-            avi       y     3.9MB       MJPG
-            mp4       y     3.9MB       mp4v
-Both look the same and about as good as original. Maybe mp4 a little better?
+## Results of experimenting with differnet codecs and file types    
 
-FFV1 -- lossless compression
-            avi      y      12.3       FFV1
-            mp4      y      26.1       avc1
-Both look really good, basically like the original.
+    codec      format   works?  size (MB)  codec decoded as
+    MJPG:
+                avi       y     3.9MB       MJPG
+                mp4       y     3.9MB       mp4v
+    Both look the same and about as good as original. Maybe mp4 a little better?
 
-H264 (X264 yielded no results in either)
-            avi      n       n/a       n/a
-            mp4      y       26.1      avc1
-Looks decent, but worse thatn FFV1 and the original.
+    FFV1 -- lossless compression
+                avi      y      12.3       FFV1
+                mp4      y      26.1       avc1
+    Both look really good, basically like the original.
 
-DIVX
-            avi      y        0.7       DIVX
-            mp4      y        0.7       mp4v
-Really good compression, really good quality: close to original. This does
-seem to be becoming the market leader for commercial streaming services.
+    H264 (X264 yielded no results in either)
+                avi      n       n/a       n/a
+                mp4      y       26.1      avc1
+    Looks decent, but worse thatn FFV1 and the original.
 
+    DIVX
+                avi      y        0.7       DIVX
+                mp4      y        0.7       mp4v
+    Really good compression, really good quality: close to original. This does
+    seem to be becoming the market leader for commercial streaming services.
+
+When I tried to specify AVC1 (or avc1) as the codec for saving it didn't work for either file.
 
 ### Notes
 avc1: advanced video coding is a type of H264  (maybe for apple?)
@@ -36,7 +38,7 @@ mjpg: motion jpeg
 
 So basically it looks like many of these codecs are not consistent with mp4, so it just defaults to mp4v or avc1, while avi (audio video interleave) supports all of these different codecs.
 
-When I tried to specify AVC1 (or avc1) as the codec for saving it didn't work for either file.
+
 
 
 
