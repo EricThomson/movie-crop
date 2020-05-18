@@ -48,15 +48,15 @@ line_color:
     (b, g, r) color of rectangle to draw for cropping -- bgr because opencv is weird
 """
 window_params = {'width': 1280, 'height': 720, 'x': 2400, 'y': 100}
-movie_path = Path(r'D:/tracking_data/sydney_cap_touch/Trial33.mpg')
-output_path = Path(r'D:/tracking_data/sydney_cap_touch/cropped')
+movie_path = Path(r'./big_bunny.mp4')
+output_path = Path(r'./saved/')
 movie_name = movie_path.stem
 save_filename = movie_name + '_cropped'
 save_filetype = 'avi'  # avi and mp4 are good.png means use image stack.
 codec = 'DIVX'     #'FFV1' is lossless. 'DIVX' is super efficient. Ignored for png
-frames_to_save = [0, 1e6]
-frames_to_preview = [0, 100]
-frame_to_crop = 700
+frames_to_save = [50, 600]
+frames_to_preview = [300, 500]
+frame_to_crop = 500
 save_fps = 15
 line_width = 4            # line for rectangle you are drawing
 line_color = (0, 0, 255)  #remember cv2 is bgr -- this is red
@@ -131,14 +131,12 @@ else:
 codec_chars = decode_codec(codec_code)
 print_movie_info(movie_length, frame_height, frame_width, fps, codec_chars)
 
-#%%
-frames_to_save = [0, 1e6]
-frames_to_preview = [0, 9000]
 if frames_to_preview[1] > movie_length:
-    print(f"Reducing preview to {movie_length}.")
+    print(f"frames_to_preview[1] being reduced to {movie_length}.")
     frames_to_preview[1] = movie_length
     
 if frames_to_save[1] > movie_length:
+    print(f"frames_to_save[1] being reduced to {movie_length}.")
     frames_to_save[1] = movie_length
     
     
@@ -146,7 +144,6 @@ if frames_to_save[1] > movie_length:
 #%% PREVIEW MOVIE (optional) 
 # hit escape once to stop, and again to close window
 # movie.set(cv2.CAP_PROP_POS_FRAMES, frame_to_crop-1)
-frames_to_preview = [1700, movie_length]
 num_to_preview = frames_to_preview[1]-frames_to_preview[0]
 print(f"\nPreviewing {num_to_preview} frames.")
 preview_window_name = 'PREVIEW (esc to close)'
@@ -183,7 +180,6 @@ print("Movie preview done")
         
 
 #%%  GET CROPPING PARAMETERS FROM ONE FRAME  
-frame_to_crop = 1700
 cropping_window_name = 'CROPPING (s to save)'
 print("\nOpening cropping window:\nUse mouse to select cropping window.")
 print("Click s to accept crop window, esc to close.")
@@ -233,7 +229,6 @@ print("Done setting crop parameters")
 # Save num_to_save frames to image stack if png specified, 
 # movie if avi/mp4 and codec specified
 #quality = 100  
-frames_to_save = [1700, movie_length-1]
 xs = crop_params['xs']
 ys = crop_params['ys']
 xe = crop_params['xe']

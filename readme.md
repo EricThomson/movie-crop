@@ -31,8 +31,7 @@ https://www.niehs.nih.gov/research/atniehs/facilities/neurobehavioral/index.cfm
 
 
 ## To do
-- Refactor `supplemental.md`.
-- Have separate script that applies params to all movies in a folder.
+- Make batch version that applies to all movies in a folder.
 - Add a rescale option.
 - Option to read/save greyscale (imread(image_path, cv2.IMREAD_GRAYSCALE))
 - Clicking X should work because this is 2020. But opencv is weird:
