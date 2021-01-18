@@ -31,11 +31,14 @@ https://www.niehs.nih.gov/research/atniehs/facilities/neurobehavioral/index.cfm
 
 
 ## To do
+- Incorporate pims(http://soft-matter.github.io/pims/v0.5/)
+- Set up to work with tiff stacks
 - Make batch version that applies to all movies in a folder.
 - Add a rescale option.
 - Option to read/save greyscale (imread(image_path, cv2.IMREAD_GRAYSCALE))
 - Clicking X should work because this is 2020. But opencv is weird:
 https://stackoverflow.com/questions/35003476/opencv-python-how-to-detect-if-a-window-is-closed
+Maybe just use matplotlib for display?
 - Change quality of encoding? https://stackoverflow.com/questions/61824667/does-videowriter-prop-quality-do-anything-in-opencv
 
 ## To think about doing
@@ -45,4 +48,4 @@ clever trick like this: https://stackoverflow.com/a/39048325/1886357 (if you wer
   ever scale this up to a larger-scale image processing project you would definitely
   want to do this)
 - Have qt file open dialog
-- Make into larger scale GUI application rather than program.
+- Make into larger scale GUI application rather than procedural thing like this.
